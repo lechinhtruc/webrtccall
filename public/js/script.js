@@ -4,7 +4,10 @@ const myPeer = new Peer(undefined, {
 	host: "mypeerserver3010.herokuapp.com",
 	port: "443", 
 	key : "peerjs",
-	secure : true
+	secure : true,
+	config: {'iceServers': [
+    	{ url: 'stun:stun2.l.google.com:19302' }
+  ]}
 });
 const myVideo = document.createElement("video");
 myVideo.muted = true;
