@@ -25,14 +25,16 @@ navigator.mediaDevices
       call.answer(stream);
       const video = document.createElement("video");
       call.on("stream", (userVideoStream) => {
-	alert(userVideoStream);
         addVideoStream(video, userVideoStream);
       });
     });
 
     socket.on("user-connected", (userId) => {
-      console.log("New User Connected");
-      connectToNewUser(userId, stream);
+      console.log(userId + " Connected");
+	setTimeout(function ()
+      	{
+        connectToNewUser(userId, stream);
+      	},5000);
     });
   });
 
