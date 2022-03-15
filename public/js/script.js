@@ -24,6 +24,7 @@ navigator.mediaDevices
       call.answer(stream);
       const video = document.createElement("video");
       call.on("stream", (userVideoStream) => {
+	alert(userVideoStream);
         addVideoStream(video, userVideoStream);
       });
     });
